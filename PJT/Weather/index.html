@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/waltograph-disney" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+    <style>
+
+        body{
+            background-image: no-repeat;
+            background-size: cover;
+        }
+
+        .main-container{
+            min-height: 100vh; 
+            /* 100vh면 화면이 꽉 참 */
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .weather-container{
+            width: 80%;
+            height: 400px;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+        }
+
+        .timer{
+            font-weight: 500;
+            font-size: 168px;
+            line-height: 168px;
+
+        }
+
+        .timer-content{
+            font-weight: bold;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .memo-wrapper{
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .memo{
+            font-size: 30px;
+        }
+
+        .modal-button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            right: 40px;
+            top: 40px;
+            width: 100px;
+            height: 100px;
+            background-image: url("./images/001-cloud.png");
+            cursor: pointer;
+            background-size: cover;
+            padding: 15px 0px 0px 0px;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 20px;
+        }
+
+        .weather-box{
+            height : 100%;
+            width : 15%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .date{
+            font-family: 'WaltographRegular';
+            font-size : 20px;
+        }
+
+        .desc{
+            font-size: 44px;
+            font-family: 'WaltographRegular';
+            font-weight: normal;
+            font-style: normal;
+            padding : 0px 0px 20px 0px;
+        }
+        .img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35%;
+        }
+
+        img{
+            width: 75%;
+            
+        }
+        .degree{
+            padding : 20px 0px 0px 0px;
+            font-weight: bold;
+        }
+        .modal-dialog{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .wise{
+            font-family: 'Do Hyeon', sans-serif;
+            font-weight: lighter;
+            font-size: 30px;
+            border: 10px;
+        }
+
+
+    </style>
+</head>
+
+
+
+<body>
+    <div class="default-box" style="height:40px"></div>
+    <main class="main-container">
+        <div class="weather-container">
+            <div class="weather-box a">
+                <div class="date"></div>
+                <div class="desc"></div>
+                <div class="img">
+                    <img src="" alt="weather">
+                </div>
+                <div class="degree"></div>
+            </div>
+            <div class="weather-box b">
+                <div class="date"></div>
+                <div class="desc"></div>
+                <div class="img">
+                    <img src="" alt="weather">
+                </div>
+                <div class="degree"></div>
+            </div>
+            <div class="weather-box c">
+                <div class="date"></div>
+                <div class="desc"></div>
+                <div class="img">
+                    <img src="" alt="weather">
+                </div>
+                <div class="degree"></div>
+            </div>
+            <div class="weather-box d">
+                <div class="date"></div>
+                <div class="desc"></div>
+                <div class="img">
+                    <img src="" alt="weather">
+                </div>
+                <div class="degree"></div>
+            </div>
+            <div class="weather-box e">
+                <div class="date"></div>
+                <div class="desc"></div>
+                <div class="img">
+                    <img src="" alt="weather">
+                </div>
+                <div class="degree"></div>
+            </div>
+
+        </div>
+        <!-- timer -->
+        <div class="timer-wrapper">
+            <div class="timer"></div>
+            <div class="timer-content">Good Morning, Mr. G</div>
+        </div>
+
+        <!-- memo -->
+        <div class="memo-input-wrapper m-3">
+            <input type="text" class="memo-input form-control" placeholder="오늘 할 일을 입력하세요!">
+        </div>
+
+        <div class="memo-wrapper">
+            <div class="memo-title">TODAY</div>
+            <div class="memo"></div>
+        </div>
+
+        <!-- Button trigger modal -->
+        <div class="modal-button" data-bs-toggle="modal" data-bs-target="#exampleModal">Today</div>        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            </div>
+        </div>
+
+
+
+
+
+
+    </main>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.2/axios.min.js" integrity="sha512-NCiXRSV460cHD9ClGDrTbTaw0muWUBf/zB/yLzJavRsPNUl9ODkUVmUHsZtKu17XknhsGlmyVoJxLg/ZQQEeGA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./index.js"></script>
+
+</body>
+</html>
