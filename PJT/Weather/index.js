@@ -86,7 +86,7 @@ async function getWeather(latitude, longitude){
     // 위도 경도가 존재할 경우
     if(latitude && longitude){
         // 날씨 API 호출
-        const url = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`
+        const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`
         const result = await axios.get(url);
         console.log(result);
         return result;
@@ -95,7 +95,7 @@ async function getWeather(latitude, longitude){
     else{
         // 날씨 API 호출 (위도, 경도 x)
         const city_name = 'Seoul';
-        const url = `http://api.openweathermap.org/data/2.5/forecast?q=${city_name}&appid=${API_KEY}`
+        const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city_name}&appid=${API_KEY}`
         const result = await axios.get(url);
         console.log(result);
         return result;
